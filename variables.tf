@@ -218,7 +218,7 @@ variable "tenant_id" {
 
 variable "location" {
   type        = string
-  default     = "eastus"
+  default     = "japaneast"
   description = "Azure region where region-specific objects exist or are to be created."
 }
 

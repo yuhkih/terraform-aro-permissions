@@ -1,4 +1,5 @@
-AZR_LOCATION ?= eastus
+# AZR_LOCATION ?= eastus
+ AZR_LOCATION ?= japaneast
 ARO_CLUSTER_NAME ?= example
 ARO_VNET_RESOURCE_GROUP ?= $(ARO_CLUSTER_NAME)-vnet-rg
 ARO_VNET_CIDR ?= 10.0.0.0/22
@@ -38,6 +39,7 @@ setup-test:
 		--disable-private-link-service-network-policies true
 
 	NSG=$$(az network nsg create --resource-group $(ARO_VNET_RESOURCE_GROUP) --name $(ARO_CLUSTER_NAME)-nsg -o tsv --query NewNSG.id)
+
 
 # NOTE: add this to the above make target when pre-configured NSG is available in the TF provider.  until then we can skip testing.
 # az network vnet subnet update \
